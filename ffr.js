@@ -13,8 +13,7 @@ d3.csv("FFR_skill.csv", function(data){
 		.append("svg")
 		.attr({
 			"width":w,
-			"height":h,
-			"preserveAspectRatio":"xMidYMin"
+			"height":h
 		});	
 	
 	var counts = _.pluck(data, 'Count')
@@ -43,7 +42,6 @@ d3.csv("FFR_skill.csv", function(data){
 	//label 
 	arcs.append("text")
 		.attr("transform", function(d,i) {
-		// return "translate(" + arc.centroid(d) + ")";
 			return "translate(" + arc.centroid(d) + ")"; 	
 		})
 		.attr({
@@ -79,6 +77,5 @@ d3.csv("FFR_skill.csv", function(data){
 			
 		})
 })
-
 
 
