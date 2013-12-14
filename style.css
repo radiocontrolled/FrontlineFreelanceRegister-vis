@@ -42,15 +42,15 @@ article{
 
 #tooltip p {
    margin: 0;
-   font-family: sans-serif;
    font-size: 16px;
+   font-family: "Helvetica";
    line-height: 20px;
 }
-
 
 path{
 	stroke: #eeeeee;
     stroke-width: 1.4;
+    fill: #2CA266;
 }
 
 

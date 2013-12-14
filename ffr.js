@@ -26,27 +26,20 @@ d3.csv("FFR_skill.csv", function(data){
 	var arc = d3.svg.arc()
 		.innerRadius(100) 
 		.outerRadius(outerRadius);
-		
-	
 	
 	// define default pie layout
 	var pie = d3.layout.pie();
 
-	
 	var arcs = svg.selectAll("g.arc") 
 		.data(pie(counts)) 
 		.enter()
 		.append("g")
 		.attr("transform", "translate(" + outerRadius + "," + outerRadius + ")"); 	
 
-
 	//Draw arc paths	
 	arcs.append("path")
-		.attr("fill", "#2CA266")
 		.attr("d", arc)
 		
-			
-
 	//label 
 	arcs.append("text")
 		.attr("transform", function(d,i) {
@@ -55,17 +48,11 @@ d3.csv("FFR_skill.csv", function(data){
 		})
 		.attr({
 			"text-anchor":"middle",
-			"font-family":"Helvetica",
 			"fill":"white"
 		})
 		.text(function(d) {
 			return d.value;
 		})
-	
-	svg.append("div")
-		.attr("id", "tooltip")
-		.append("p").attr("id", "skill")
-		.append("text")
 	
 	d3.selectAll("path")
 		.on("mouseover",function(d,i){				
@@ -91,8 +78,6 @@ d3.csv("FFR_skill.csv", function(data){
 			d3.select("#skill text").remove();
 			
 		})
-
-
 })
 
 
